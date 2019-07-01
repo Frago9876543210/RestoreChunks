@@ -5,8 +5,7 @@
 namespace Frago9876543210\RestoreChunks;
 
 use DirectoryIterator;
-use pocketmine\block\tile\Tile;
-use pocketmine\block\tile\TileFactory;
+use pocketmine\block\tile\{Tile, TileFactory};
 use pocketmine\event\Listener;
 use pocketmine\network\mcpe\protocol\{BlockEntityDataPacket, FullChunkDataPacket, StartGamePacket};
 use pocketmine\network\mcpe\serializer\NetworkNbtSerializer;

@@ -7,8 +7,7 @@ declare(strict_types=1);
 
 namespace Frago9876543210\RestoreChunks;
 
-use pocketmine\block\tile\Tile;
-use pocketmine\block\tile\TileFactory;
+use pocketmine\block\tile\{Tile, TileFactory};
 use pocketmine\nbt\NbtDataException;
 use pocketmine\network\mcpe\protocol\types\RuntimeBlockMapping;
 use pocketmine\network\mcpe\serializer\{NetworkBinaryStream, NetworkNbtSerializer};
