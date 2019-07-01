@@ -5,6 +5,7 @@
 namespace Frago9876543210\RestoreChunks;
 
 use DirectoryIterator;
+use pocketmine\block\tile\Tile;
 use pocketmine\block\tile\TileFactory;
 use pocketmine\event\Listener;
 use pocketmine\network\mcpe\protocol\{BlockEntityDataPacket, FullChunkDataPacket, StartGamePacket};
@@ -56,7 +57,9 @@ class Main extends PluginBase implements Listener{
 						$pk->decode();
 
 						$tile = TileFactory::createFromData($world, $nbtSerializer->read($pk->namedtag)->getTag());
-						$world->addTile($tile);
+						if($tile instanceof Tile){
+							$world->addTile($tile);
+						}
 
 						$this->getLogger()->info("[$worldName] [$pk->x $pk->y $pk->z] Loaded additional tile data");
 					}

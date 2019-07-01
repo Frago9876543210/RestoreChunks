@@ -7,6 +7,7 @@ declare(strict_types=1);
 
 namespace Frago9876543210\RestoreChunks;
 
+use pocketmine\block\tile\Tile;
 use pocketmine\block\tile\TileFactory;
 use pocketmine\nbt\NbtDataException;
 use pocketmine\network\mcpe\protocol\types\RuntimeBlockMapping;
@@ -132,7 +133,10 @@ final class NetworkChunkDeserializer{
 		$chunk->setGenerated(true);
 
 		foreach($tags as $tag){
-			$chunk->addTile(TileFactory::createFromData($world, $tag));
+			$tile = TileFactory::createFromData($world, $tag);
+			if($tile instanceof Tile){
+				$chunk->addTile($tile);
+			}
 		}
 
 		$world->setChunk($chunkX, $chunkZ, $chunk, false);
