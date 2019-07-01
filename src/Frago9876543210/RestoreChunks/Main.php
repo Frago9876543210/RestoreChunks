@@ -34,7 +34,7 @@ class Main extends PluginBase implements Listener{
 
 				$manager = $this->getServer()->getWorldManager();
 				if(!$manager->loadWorld($worldName = basename($directory))){
-					$manager->generateWorld($worldName, 0, Flat::class, ["0x0;0x0;0x0"], false);
+					$manager->generateWorld($worldName, 0, Flat::class, ["preset" => "0x0;0x0;0x0"], false);
 				}
 				$world = $manager->getWorldByName($worldName);
 
