@@ -129,7 +129,7 @@ final class NetworkChunkDeserializer{
 		}
 
 		$chunk = new Chunk($chunkX, $chunkZ, $subChunks, [], $tags, $biomeIds, $heightMap);
-		$chunk->setGenerated(true);
+		$chunk->setGenerated();
 
 		foreach($tags as $tag){
 			$tile = TileFactory::createFromData($world, $tag);
