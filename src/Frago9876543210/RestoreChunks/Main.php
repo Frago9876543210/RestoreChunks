@@ -1,5 +1,7 @@
 <?php
 
+/** @noinspection PhpInternalEntityUsedInspection */
+
 namespace Frago9876543210\RestoreChunks;
 
 use DirectoryIterator;
